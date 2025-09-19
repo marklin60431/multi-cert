@@ -49,7 +49,7 @@ for domain in $(cat "$DOMAINS_FILE"); do
     # 確保 `_acme-challenge` 和域名之間只有一個點，沒有多餘的點
     DOMAIN_NO_WILDCARD=$(echo "$DOMAIN_NO_WILDCARD" | sed 's/\.\./\./g')  # 如果有兩個連接的點（..），就去掉
 
-    # 輸出 TXT 記錄到文件
+    # 輸出TXT記錄到文件
     echo "用戶：$domain" >> "$CHALLENGE_FILE"
     echo "請加 TXT 記錄：" >> "$CHALLENGE_FILE"
     echo "  名稱：_acme-challenge.$DOMAIN_NO_WILDCARD" >> "$CHALLENGE_FILE"
